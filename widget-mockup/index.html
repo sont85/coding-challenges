@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<meta name="viewport" content="initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="custom.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+  	
+   		$('input[name^=item-box]').on("click",function() {
+   			var button = $(this).closest(".numbox");
+   			var price = button.data("price");
+   			price = parseFloat(price);
+   			var num = $("input[type=number]").val();
+			var total = (num * price).toFixed(2);
+			var totalPrint = $('<p id="total">($' + total + ' TOTAL)</p>');
+				if(num >= 2){
+				
+				$('.price').find('#total').html(totalPrint);
+							
+				}
+			
+		}); // end click
+
+	
+
+ }); 
+</script>
+</head>
+<body>
+	<!-- Open the output in a new blank tab (Click the arrow next to "Show Output" button) and resize the window to understand how the Bootstrap responsive grid system works. -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4"><div>
+                <p>Assorted Vegetables (1lb)</p>
+                    <div class="item-box">
+                        <div class="img-wrap">
+                            <img class="img-size" src="http://www.hookstockimages.com/wp-content/uploads/symbiostock_rf_content/586-fresh-assorted-vegetables.jpg">
+                        </div>
+                        <div class="price-box">
+                        <div class="price">
+                            <p id="price">$1.00</p>
+                            <p id="total"  style="color: #fff;">.</p>
+                        </div>
+                        <div style="float: right;">
+                            <p class="quantity">QTY:</p>
+                            <input type='number' size='10' id='numberinput' class="numbox" data-price="1.00" name='item-box1' value='0' min='0' max='100' />
+                        </div>
+                        <div style="width: 90%; clear: both; margin: 0 auto; ">
+                        <button style="width: 100%; padding: 10px;" class="cart-button" name="button"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</button>
+                        </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+            	<div>
+            	<p>Respberries (1lb)</p>
+            		<div class="item-box">
+            	     <div class="img-wrap">
+                        <img class="img-size" src="http://globalhealthideas.org/wp-content/uploads/2012/07/raspberries.jpg">
+                        </div>
+                        <div class="price-box">
+                        <div class="price">
+                            <p id="price">$2.50</p>
+                            <p id="total" style="color: #fff;">.</p>
+                        </div>
+                        <div style="float: right;">
+                            <p class="quantity">QTY:</p>
+                            <input  type='number' size='10' id='numberinput' class="numbox"  data-price="2.50" name='item-box2' value='0' min='0' max='100' />
+                        </div>
+                        <div style="width: 90%; clear: both; margin: 0 auto; ">
+                        <button style="width: 100%; padding: 10px;" class="cart-button" name="button"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</button>
+                        </div>    
+                        </div>
+                
+            		</div>
+            	</div>
+            </div>
+            <div class="col-sm-4">
+            	<div>
+            	<p>1 Fresh Kiwi</p>
+            		<div class="item-box">
+            			<div class="img-wrap">
+                        <img class="img-size" src="http://www.volibo.com/Yonetim/dosyalar/8122fresh_kiwi.jpg">
+                        </div>
+                        <div class="price-box">
+                        <div class="price">
+                            <p id="price">$.30</p>
+                            <p id="total" style="color: #fff;">.</p>
+                        </div>
+                        <div style="float: right;">
+                            <p class="quantity">QTY:</p>
+                            <input  type='number' size='10' id='numberinput' class="numbox" data-price=".30" name='item-box3' value='0' min='0' max='100' />
+                        </div>
+                        <div style="width: 90%; clear: both; margin: 0 auto; ">
+                        <button style="width: 100%; padding: 10px;" class="cart-button" name="button"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</button>
+                        </div>    
+                        </div>
+            			
+            		</div>
+            	</div>
+            </div>
+           
+        </div>
+    </div>
+</body>
+</html>               
